@@ -1,0 +1,6 @@
+select emp_id,first_name,surname,gender,address,email,
+depart_name,depart_city,emprole,salary,overtime_hours,bonus
+from employees as em left join department as dm on em.depart_id = dm.depart_id
+left join roles as rl on em.role_id = rl.role_id
+left join salaries as sl on em.salary_id = sl.salary_id
+left join overtime as ot on em.overtime_id = ot.overtime_id

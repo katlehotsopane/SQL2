@@ -1,0 +1,11 @@
+SELECT myc.contact_id,surname,first_name,profession, phone, email,gender,seeking,birthday,zip.zip_code,
+       city,province,status,ints.interest,ints2.interest2
+FROM my_contacts as myc   
+LEFT JOIN profession as prf on myc.prof_id=prf.prof_id
+LEFT JOIN zip_code as zip on myc.zip_code=zip.zip_code
+LEFT JOIN status as sts on myc.status_id=sts.status_id
+LEFT JOIN contact_interest as cin on cin.contact_id =myc.contact_id
+LEFT JOIN interests as ints on cin.interest_id =ints.interest_id 
+LEFT JOIN interests2 as ints2 on cin.interest2_id =ints2.interest2_id 
+LEFT JOIN contact_seeking as cos on cos.contact_id =myc.contact_id
+LEFT JOIN seeking as sek on cos.seeking_id =sek.seeking_id
